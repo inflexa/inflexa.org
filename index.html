@@ -5,10 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iNfleXa</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        function updateVisitorCount() {
+            let count = localStorage.getItem('visitorCount');
+            if (count === null) {
+                count = 0;
+            }
+            count++;
+            localStorage.setItem('visitorCount', count);
+            document.getElementById('visitor-count').innerText = count;
+        }
+        window.onload = updateVisitorCount;
+    </script>
 </head>
 <body>
     <header>
-        <img src="logo_1.webp" alt="iNfleXa Logo" style="height: 100px;">
+        <img src="logo 1.webp" alt="iNfleXa Logo" style="height: 100px;">
         <h1>Welcome to iNfleXa</h1>
     </header>
     <nav>
@@ -29,16 +41,22 @@
             <p>iNfleXa offers a range of services to help individuals discover valuable resources and tools:</p>
             <ul>
                 <li>Curated Product Recommendations: We provide a carefully selected collection of products that are essential for everyday use and personal development. Our recommendations are based on thorough research and user feedback to ensure you get the best options available.</li>
-                <li>Self-Published Books: Explore our exclusive collection of self-published books covering various topics, including personal growth, education, and hobbies. Each book is crafted to provide insightful knowledge and practical tips to enhance your learning experience.</li>
+                <li>Self-Published Books: Explore our exclusive collection of self-published books covering various topics. Each book is crafted to provide insightful knowledge and practical tips to enhance your learning experience.</li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you! Whether you have a question, feedback, or just want to say hello, feel free to reach out to us at:</p>
+            <ul>
+                <li>Email: <a href="mailto:inflexa.info@gmail.com">inflexa.info@gmail.com</a></li>
+                <li>Email: <a href="mailto:inflexa@protonmail.com">inflexa@protonmail.com</a></li>
             </ul>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 iNfleXa. All rights reserved.</p>
-        <!-- Visitor Counter -->
         <div>
-            <a href='https://www.free-visitor-counters.com'>Visitor Counter</a>
-            <script type='text/javascript' src='https://www.free-visitor-counters.com/script.js?id=YOUR_ID'></script>
+            Visitor Count: <span id="visitor-count">0</span>
         </div>
     </footer>
 </body>
